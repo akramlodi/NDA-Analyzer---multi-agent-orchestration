@@ -1,0 +1,88 @@
+INDIA LEGAL STATUTES — NDA REFERENCE DOCUMENT
+Collection: legal_statutes
+Jurisdiction: India
+Last updated: 2024
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 1: INDIAN CONTRACT ACT, 1872
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Section 27 — Restraint of Trade (Non-Compete Clauses)
+Every agreement by which any one is restrained from exercising a lawful profession, trade, or business of any kind, is to that extent void. Indian courts have consistently held that post-employment non-compete clauses are void under Section 27 as they restrain trade after the employment relationship ends. An NDA clause that attempts to prevent an employee from working in the same industry after leaving employment is unenforceable in India.
+
+Exception to Section 27: Non-compete clauses are enforceable ONLY during the active employment period (not post-termination), and only to protect legitimate trade secrets actually shared with the employee.
+
+Key case law: Wipro Limited v. Beckman Coulter International S.A. (2006, Delhi High Court) — held that post-termination non-compete clauses are void in India.
+
+Section 73 — Compensation for Loss
+When a contract is breached, the party suffering the breach is entitled to compensation for any loss or damage that naturally arose in the usual course of things from the breach, or which the parties knew would likely result from the breach. NDAs must clearly specify what constitutes a breach and what remedy is available, otherwise damages are difficult to enforce.
+
+Section 74 — Liquidated Damages
+When a contract contains a pre-determined penalty clause, the party complaining of breach is entitled to receive reasonable compensation not exceeding the amount named in the contract. Penalty clauses in NDAs must not be punitive or unconscionable — courts will reduce them to a reasonable level.
+
+Section 14 — Free Consent
+Consent is said to be free when it is not caused by coercion, undue influence, fraud, misrepresentation, or mistake. An NDA signed under duress, or where the employee was not given adequate time to review (typically less than 24 hours before signing), may be challenged on grounds of lack of free consent.
+
+Section 23 — Unlawful Consideration
+The consideration or object of an agreement is unlawful if it is forbidden by law, or is of such a nature that if permitted it would defeat the provisions of any law, or is fraudulent, or involves or implies injury to the person or property of another. Overly broad NDAs that prevent disclosure of illegal workplace conduct (e.g., sexual harassment, wage theft) may be void under Section 23.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 2: INFORMATION TECHNOLOGY ACT, 2000 (IT ACT)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Section 43 — Penalty for Damage to Computer Systems
+If any person without permission of the owner or any other person in charge of a computer, computer system, or computer network accesses, downloads, extracts, copies, or extracts any data, he shall be liable to pay damages by way of compensation to the affected party. NDAs covering software companies must reference this section when dealing with data access obligations.
+
+Section 43A — Compensation for Failure to Protect Data
+Where a body corporate possessing, dealing, or handling any sensitive personal data or information in a computer resource owned, controlled, or operated by it, is negligent in implementing and maintaining reasonable security practices, and thereby causes wrongful loss or wrongful gain to any person, it shall be liable to pay damages. NDAs must specify the employee's data protection responsibilities in line with Section 43A obligations.
+
+Section 66 — Computer Related Offences
+If any person, dishonestly or fraudulently, does any act referred to in section 43, he shall be punishable with imprisonment or fine. NDAs covering IT employees should reference that unauthorised data access is a criminal offence under this section, not merely a civil breach.
+
+Section 72 — Breach of Confidentiality and Privacy
+Any person who, in pursuance of any of the powers conferred under this Act, has secured access to any electronic record, book, register, correspondence, information, document, or other material without the consent of the person concerned discloses such material to any other person shall be punished with imprisonment of a term which may extend to two years, or with fine which may extend to one lakh rupees, or with both. This section directly applies to confidentiality obligations in technology company NDAs.
+
+IT (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011
+These rules define "sensitive personal data" to include passwords, financial information, health data, sexual orientation, biometric data, and similar categories. NDAs in companies handling such data must explicitly prohibit disclosure of this category of information and should align obligations with these Rules.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 3: TRADE SECRETS AND CONFIDENTIAL INFORMATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+India does not have a dedicated Trade Secrets Act. Protection of trade secrets relies on:
+1. Contractual obligations (NDA / employment contract)
+2. Implied duty of confidence under common law
+3. Indian Contract Act 1872
+4. IT Act 2000 (for digital information)
+
+For an NDA to protect trade secrets effectively in India, the following elements must be present:
+- The information must be clearly defined and identified in the agreement
+- The information must actually be secret (not publicly known)
+- The employer must take reasonable steps to maintain secrecy
+- The obligation must be proportionate and not amount to restraint of trade
+
+Vague or catch-all confidentiality definitions (e.g., "all information the employee encounters") are routinely struck down by Indian courts as overbroad.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 4: LABOUR LAW CONSIDERATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Industrial Disputes Act, 1947
+NDAs cannot be used to waive an employee's rights under the Industrial Disputes Act. Any clause that purports to prevent an employee from raising an industrial dispute, approaching a labour court, or exercising statutory rights is void and unenforceable.
+
+Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013 (POSH Act)
+NDAs cannot contain clauses that prevent a woman employee from reporting sexual harassment. Any confidentiality clause that silences a victim of workplace sexual harassment is against public policy and void. The Supreme Court of India has reinforced this position.
+
+Payment of Gratuity Act, 1972
+NDAs cannot condition the payment of statutory gratuity on compliance with post-employment obligations. Gratuity is a statutory right and cannot be forfeited through an NDA.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 5: JURISDICTION AND GOVERNING LAW
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+NDAs in India should specify:
+- The governing law (must be Indian law for India-based employment)
+- The jurisdiction for disputes (city/state where employer is registered or where work is performed)
+- Whether disputes go to arbitration (Arbitration and Conciliation Act, 1996) or civil courts
+
+Arbitration clauses in NDAs are generally enforceable in India under the Arbitration and Conciliation Act, 1996, as amended by the 2015 and 2019 amendments. However, disputes involving statutory rights (e.g., labour rights, POSH complaints) cannot be arbitrated.

@@ -1,0 +1,117 @@
+STANDARD NDA CLAUSE TEMPLATES — BEST PRACTICES
+Collection: nda_templates
+Jurisdiction: India
+Purpose: Reference library of well-drafted, enforceable NDA clauses for comparison during analysis
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CLAUSE 1: DEFINITION OF CONFIDENTIAL INFORMATION (STRONG VERSION)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+"Confidential Information" means any non-public information that the Company designates as being confidential or which, under the circumstances surrounding disclosure, ought to be treated as confidential, including without limitation: (a) technical data, trade secrets, know-how, research, product plans, products, services, customer lists, markets, software, developments, inventions, processes, formulas, technology, designs, drawings, engineering, hardware configuration information, marketing, finances, or other business information; (b) information disclosed by the Company in writing and marked as "Confidential" or with a similar designation; (c) information disclosed orally and confirmed in writing as confidential within thirty (30) days of such oral disclosure; and (d) information that a reasonable person would consider confidential given its nature and the circumstances of its disclosure.
+
+Exclusions: Confidential Information does not include information that (i) is or becomes publicly known through no breach of this Agreement by the Employee; (ii) was rightfully in the Employee's possession before disclosure by the Company; (iii) is independently developed by the Employee without use of or reference to the Company's Confidential Information; (iv) is received from a third party without restriction; or (v) is required to be disclosed by law, court order, or governmental authority, provided the Employee gives the Company prompt written notice of such requirement and cooperates with the Company in seeking a protective order.
+
+WHY THIS IS STRONG: Specific categories, 30-day oral confirmation window, clear exclusions including legal disclosure. Survives Section 27 scrutiny because it is limited to genuinely secret material.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CLAUSE 2: CONFIDENTIALITY OBLIGATIONS (STRONG VERSION)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The Employee agrees to: (a) hold all Confidential Information in strict confidence and not disclose it to any third party without the prior written consent of the Company; (b) use the Confidential Information solely for the purpose of performing the Employee's duties for the Company; (c) protect the Confidential Information using at least the same degree of care used to protect the Employee's own confidential information, but in no event less than reasonable care; (d) promptly notify the Company upon becoming aware of any actual or suspected unauthorised disclosure or use of Confidential Information; and (e) upon termination of employment for any reason, immediately return or certifiably destroy all materials containing Confidential Information in the Employee's possession.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CLAUSE 3: DURATION OF CONFIDENTIALITY OBLIGATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+RECOMMENDED (time-bound, India-enforceable):
+The Employee's confidentiality obligations under this Agreement shall continue for a period of three (3) years following the termination or expiry of the Employee's employment with the Company, or until the Confidential Information enters the public domain through no act or omission of the Employee, whichever occurs first. Notwithstanding the foregoing, obligations with respect to trade secrets shall continue for as long as such information remains a trade secret under applicable law.
+
+WEAK VERSION (avoid): "The Employee's obligations shall be perpetual." — Indian courts may strike this down as unreasonable. Time-bound obligations (2–5 years post-termination) are far more defensible.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CLAUSE 4: NON-SOLICITATION (EMPLOYEES)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+RECOMMENDED (enforceable in India — does not restrain trade):
+During the Employee's employment and for a period of twelve (12) months following termination, the Employee shall not, directly or indirectly, solicit, induce, recruit, or encourage any employee of the Company to leave their employment with the Company, where the Employee had direct professional contact with such person during the last twelve (12) months of their employment.
+
+NOTE: Non-solicitation of employees is generally more enforceable than non-compete clauses in India because it protects a legitimate business interest (workforce stability) without fully restraining trade. Courts look at reasonableness of duration and scope.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CLAUSE 5: NON-SOLICITATION (CLIENTS)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+During the Employee's employment and for a period of twelve (12) months following termination, the Employee shall not, directly or indirectly, solicit or accept business from any client or prospective client of the Company with whom the Employee had material contact during the twelve (12) months prior to termination, for the purpose of providing services that are competitive with the Company's business.
+
+NOTE: "Material contact" must be defined. Blanket non-solicitation of all clients the company ever had is unenforceable. Limit to clients the employee actually worked with.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CLAUSE 6: INTELLECTUAL PROPERTY ASSIGNMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The Employee hereby assigns to the Company all right, title, and interest in and to any inventions, discoveries, developments, improvements, works of authorship, or other intellectual property (collectively "Work Product") that the Employee creates, conceives, or reduces to practice: (a) during the Employee's working hours; (b) using the Company's equipment, facilities, or Confidential Information; or (c) that relate to the Company's current or reasonably anticipated business or research and development. The Employee agrees to execute any documents and take any actions necessary to perfect such assignment.
+
+CARVE-OUT (important for India — protects employee's personal work):
+This assignment does not apply to Work Product that the Employee develops entirely on their own time, without using the Company's equipment, facilities, or Confidential Information, and that does not relate to the Company's business or anticipated research and development.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CLAUSE 7: REMEDIES AND INJUNCTIVE RELIEF
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The Employee acknowledges that any breach of this Agreement would cause irreparable harm to the Company for which monetary damages would be an inadequate remedy, and that the Company shall be entitled to seek injunctive or other equitable relief in addition to all other remedies available at law. This Agreement shall not limit the Company's right to pursue any other remedy available under applicable law, including the Information Technology Act, 2000 and the Indian Contract Act, 1872.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CLAUSE 8: PERMITTED DISCLOSURES (CRITICAL CARVE-OUTS)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Notwithstanding any other provision of this Agreement, nothing in this Agreement shall prohibit or restrict the Employee from: (a) making any disclosure required by applicable law, regulation, or court order; (b) reporting any unlawful conduct, including workplace harassment, discrimination, or criminal activity, to appropriate government authorities; (c) filing a complaint with or participating in any investigation conducted by the National Commission for Women, Internal Complaints Committee under the POSH Act, or any other statutory authority; (d) disclosing information to the Employee's legal counsel for the purpose of obtaining legal advice; or (e) exercising any rights under applicable labour laws.
+
+WHY THIS IS CRITICAL: Without this clause, the NDA may be void under Section 23 of the Indian Contract Act (unlawful object) if it attempts to silence reporting of illegal conduct. POSH Act disclosures cannot be restricted by any private agreement.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CLAUSE 9: GOVERNING LAW AND DISPUTE RESOLUTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+This Agreement shall be governed by and construed in accordance with the laws of India. Any dispute arising out of or in connection with this Agreement shall be first attempted to be resolved through good-faith negotiation between the parties. If the dispute is not resolved within thirty (30) days, either party may refer the matter to binding arbitration under the Arbitration and Conciliation Act, 1996, before a sole arbitrator mutually agreed upon by the parties, or if no agreement is reached within fifteen (15) days, appointed by the High Court of [City]. The seat of arbitration shall be [City], India. The language of arbitration shall be English. The award shall be final and binding.
+
+Notwithstanding the above, disputes involving statutory rights under Indian labour laws, the POSH Act, or any other legislation conferring non-waivable rights shall not be subject to arbitration and shall be resolved before the appropriate statutory authority or court.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CLAUSE 10: SEVERABILITY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+If any provision of this Agreement is found to be invalid, illegal, or unenforceable under applicable law, such provision shall be modified to the minimum extent necessary to make it valid, legal, and enforceable, and the remaining provisions shall continue in full force and effect. In the event that a court determines that a time or geographic limitation is unreasonable, the parties authorise the court to modify such limitation to the maximum extent enforceable.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CLAUSE 11: ENTIRE AGREEMENT AND AMENDMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+This Agreement constitutes the entire agreement between the parties with respect to the subject matter hereof and supersedes all prior or contemporaneous understandings, agreements, negotiations, representations, and warranties. This Agreement may not be amended except by a written instrument signed by both parties. No waiver by either party of any breach shall constitute a waiver of any other or subsequent breach.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+COMMON LOOPHOLE PATTERNS — WHAT TO FLAG
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+LOOPHOLE TYPE 1 — Vague definition:
+"All information the employee sees or hears during employment" → too broad, unenforceable, no legitimate interest shown.
+
+LOOPHOLE TYPE 2 — No oral disclosure procedure:
+Oral disclosures with no written confirmation window → employee can argue nothing verbal was ever "confidential."
+
+LOOPHOLE TYPE 3 — Perpetual duration:
+"Obligations continue forever" → courts will reduce; employee can challenge as unreasonable.
+
+LOOPHOLE TYPE 4 — No exclusions:
+No carve-out for publicly available information → employee can argue public LinkedIn profile / industry knowledge is covered, making the clause effectively meaningless.
+
+LOOPHOLE TYPE 5 — Missing POSH carve-out:
+No exception for statutory reporting obligations → clause is void to the extent it silences POSH disclosures. Creates liability for the company, not just the employee.
+
+LOOPHOLE TYPE 6 — Unenforceable post-termination non-compete:
+"Employee shall not work in the software industry for 2 years" → void under Section 27, Indian Contract Act.
+
+LOOPHOLE TYPE 7 — No remedy specification:
+Agreement says "breach will result in consequences" without specifying what → damages calculation impossible, injunction harder to obtain.
+
+LOOPHOLE TYPE 8 — Mutual vs one-sided:
+Agreement only restricts the employee, not the company → signals bad faith, may be challenged as unconscionable.

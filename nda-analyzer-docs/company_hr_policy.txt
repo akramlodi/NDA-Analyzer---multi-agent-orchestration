@@ -1,0 +1,139 @@
+TECHVISION SOLUTIONS PVT. LTD.
+HUMAN RESOURCES — CONFIDENTIALITY AND DATA PROTECTION POLICY
+Document: HR-POL-003
+Effective Date: 1 April 2024
+Approved by: Head of HR
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. PURPOSE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+This policy sets out TechVision Solutions Pvt. Ltd.'s ("the Company") expectations regarding the protection of confidential and proprietary information by all employees, contractors, interns, and consultants. This policy supplements any Non-Disclosure Agreement ("NDA") signed by the individual and forms part of the employment relationship.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2. CATEGORIES OF COMPANY CONFIDENTIAL INFORMATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The following categories are considered confidential by the Company and must be protected at all times:
+
+2.1 Technical Information
+- Source code, algorithms, software architecture documents
+- System designs, API specifications, database schemas
+- Unpublished patents, invention disclosures, R&D roadmaps
+- Security credentials, encryption keys, access tokens
+
+2.2 Business Information
+- Client lists, client contracts, pricing structures
+- Revenue figures, profit margins, financial forecasts
+- Sales pipeline data, CRM records
+- Vendor agreements and negotiated pricing
+- Merger, acquisition, or partnership discussions
+
+2.3 Personnel Information
+- Salary and compensation details of all employees
+- Performance review records
+- Personal data of employees (Aadhaar, PAN, bank details)
+- Medical or health information of employees
+
+2.4 Strategic Information
+- Product roadmaps not yet publicly announced
+- Go-to-market strategies
+- Competitive analysis reports
+- Investment plans and fundraising details
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+3. EMPLOYEE OBLIGATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+3.1 All employees must:
+- Access company systems only for work-related purposes using company-provided credentials
+- Not copy confidential information to personal devices, personal email, or personal cloud storage accounts without prior written approval from their department head
+- Lock workstations when unattended
+- Not discuss confidential matters in public places or on personal phone calls
+- Report any suspected data breach, loss of device, or unauthorised access to IT Security (security@techvision.in) within 2 hours of becoming aware
+
+3.2 Remote work: Employees working from home or remote locations must use the Company-provided VPN at all times when accessing Company systems. Personal Wi-Fi networks must use WPA2 or WPA3 encryption. Employees must not work on confidential matters in public cafes or shared workspaces unless using a screen privacy filter.
+
+3.3 Handling of physical documents: Printed confidential documents must be stored in locked drawers. Documents that are no longer needed must be shredded using cross-cut shredding and not placed in general waste bins.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+4. CLASSIFICATION SYSTEM
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The Company uses the following four-tier classification:
+
+RESTRICTED — Highest sensitivity. Access on need-to-know basis only. Encryption required. Examples: source code, client contracts, M&A information.
+
+CONFIDENTIAL — High sensitivity. Internal distribution limited. Must not leave company network without encryption. Examples: financial forecasts, HR records.
+
+INTERNAL — For internal use only. Not to be shared externally without approval. Examples: internal process documents, meeting minutes.
+
+PUBLIC — Approved for external distribution. No restrictions. Examples: marketing materials, press releases.
+
+All documents must be marked with their classification at the top of the first page. Unmarked documents are assumed to be INTERNAL by default.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+5. NDA REQUIREMENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+5.1 All employees joining the company must sign a Non-Disclosure Agreement on or before their first day of employment. The NDA must be reviewed by the Legal team before execution.
+
+5.2 Contractors and vendors with access to RESTRICTED or CONFIDENTIAL information must sign an NDA before being granted access.
+
+5.3 NDAs must be reviewed for renewal or update every three (3) years or upon a significant change in the employee's role.
+
+5.4 HR must maintain a signed copy of each NDA in the employee's personnel file (physical and digital).
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+6. OFF-BOARDING PROCEDURE — CONFIDENTIALITY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Upon resignation or termination, the following must occur:
+
+6.1 The employee must return all company equipment (laptops, access cards, phones) on or before their last working day.
+
+6.2 IT Security will revoke all system access on the last working day.
+
+6.3 The employee must complete an exit declaration confirming:
+- No confidential information has been retained on personal devices
+- All company data has been deleted from personal cloud storage
+- No copies of source code, client data, or RESTRICTED material are retained
+
+6.4 The employee is reminded in writing (via the offboarding letter) that their NDA obligations continue for the post-termination period specified in their NDA.
+
+6.5 The Company will NOT threaten or withhold full and final settlement of statutory dues (gratuity, provident fund, leave encashment) as a means of enforcing NDA compliance. Statutory payments are unconditionally due.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+7. PERMITTED DISCLOSURES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Nothing in this policy or in any NDA signed with the Company prevents employees from:
+- Reporting workplace sexual harassment to the Internal Complaints Committee under the POSH Act
+- Filing complaints with the labour commissioner or labour courts regarding wage theft or unfair dismissal
+- Reporting criminal conduct to law enforcement agencies
+- Disclosing information under compulsion of a court order or statutory requirement
+- Seeking legal advice from a personal lawyer
+
+Employees who make reports in good faith under any of the above categories are protected from retaliation under Company policy and applicable law.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+8. CONSEQUENCES OF BREACH
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Breach of this policy or of a signed NDA may result in:
+- Formal disciplinary proceedings up to and including termination of employment
+- Civil legal action for damages under the Indian Contract Act, 1872
+- Criminal complaint under Section 66 or Section 72 of the Information Technology Act, 2000 where applicable
+- Injunctive relief sought in a competent court of jurisdiction
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+9. DATA PROTECTION AND PERSONAL DATA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The Company collects and processes employee personal data in compliance with the IT (Reasonable Security Practices) Rules, 2011 and the Digital Personal Data Protection Act, 2023 (DPDPA). Employees have the right to access, correct, and where applicable, erase their personal data held by the Company. Requests should be directed to the Data Protection Officer at dpo@techvision.in.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+10. REVIEW AND CONTACT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+This policy is reviewed annually. Questions should be directed to HR at hr@techvision.in or to Legal at legal@techvision.in.
