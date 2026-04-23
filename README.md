@@ -1,111 +1,158 @@
-# NDA Analyzer — Sample Documents & Setup Guide
+# NDA Analyzer
 
-## Document Map
-
-```
-nda-analyzer-docs/
-├── india_legal_statutes.txt       → ChromaDB collection: legal_statutes
-├── nda_clause_templates.txt       → ChromaDB collection: nda_templates
-├── company_hr_policy.txt          → ChromaDB collection: company_policies
-├── sample_nda_with_loopholes.txt  → Upload this via the UI to demo the analyzer
-└── README.md                      → This file
-```
+A full-stack web application that analyzes Indian employment NDAs using a 4-agent AI pipeline. Upload a PDF or DOCX and get a structured report of every loophole, compliance gap under Indian law, and a suggested fix for each problematic clause.
 
 ---
 
-## ChromaDB Seeding Instructions
+## Tech Stack
 
-These three documents go into ChromaDB **before** any NDA is analyzed.
-Run this seed script once at setup (or as part of your `npm run seed` command).
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 16 (App Router) + TypeScript |
+| Styling | Tailwind CSS v4 |
+| LLM (text generation) | Gemini 2.5 Flash Lite (`gemini-2.5-flash-lite`) |
+| Embeddings | HuggingFace Inference API — `sentence-transformers/all-MiniLM-L6-v2` |
+| Vector store | ChromaDB v3 (local server, persistent at `./chroma_db`) |
+| PDF parsing | pdf-parse v2 |
+| DOCX parsing | mammoth |
+| Jurisdiction | India only |
 
-### Recommended chunking strategy
+---
 
-| Document | Chunk size | Overlap | Reason |
+## Prerequisites
+
+- Node.js 20+
+- Python 3.9+ with `chromadb` installed (`pip install chromadb`)
+- A **Gemini API key** (for text generation)
+- A **HuggingFace token** (for embeddings — free tier works)
+
+---
+
+## Environment Variables
+
+Create `.env.local` in the project root:
+
+```
+GEMINI_API_KEY=your_gemini_api_key_here
+HF_TOKEN=your_huggingface_token_here
+```
+
+> `GEMINI_GENERATION_MODEL` is optional — defaults to `gemini-2.5-flash-lite`.
+
+---
+
+## Setup
+
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Start ChromaDB
+
+ChromaDB must be running before seeding or starting the app.
+
+```bash
+pip install chromadb
+chroma run --path ./chroma_db
+```
+
+Keep this terminal open. ChromaDB listens on `http://localhost:8000`.
+
+### 3. Seed ChromaDB (one-time)
+
+```bash
+npm run seed
+```
+
+This seeds 3 collections from the reference documents in `nda-analyzer-docs/`:
+
+| Collection | Source file | Chunk size | Overlap |
 |---|---|---|---|
-| india_legal_statutes.txt | 600 tokens | 80 tokens | Legal sections are self-contained; overlap catches cross-section references |
-| nda_clause_templates.txt | 500 tokens | 60 tokens | Each clause template is a unit; overlap preserves clause + loophole note together |
-| company_hr_policy.txt | 400 tokens | 50 tokens | Policy sections are shorter; tighter chunks improve precision |
+| `legal_statutes` | `india_legal_statutes.txt` | 600 words | 80 words |
+| `nda_templates` | `nda_clause_templates.txt` | 500 words | 60 words |
+| `company_policies` | `company_hr_policy.txt` | 400 words | 50 words |
 
-### Python seed script (save as `scripts/seed_chromadb.py`)
+Embeddings are generated using `sentence-transformers/all-MiniLM-L6-v2` via the HuggingFace Inference API.
 
-```python
-import chromadb
-from chromadb.utils import embedding_functions
-import os, re
+### 4. Start the app
 
-chroma_client = chromadb.PersistentClient(path="./chroma_db")
+```bash
+npm run dev
+```
 
-# Use Gemini embeddings via Google Generative AI
-# pip install chromadb google-generativeai
-import google.generativeai as genai
-genai.configure(api_key=os.environ["GEMINI_API_KEY"])
+Open [http://localhost:3000](http://localhost:3000).
 
-class GeminiEmbeddingFunction(embedding_functions.EmbeddingFunction):
-    def __call__(self, input):
-        result = genai.embed_content(
-            model="models/text-embedding-004",
-            content=input,
-            task_type="retrieval_document"
-        )
-        return result["embedding"] if isinstance(input, str) else [r["embedding"] for r in result]
+---
 
-emb_fn = GeminiEmbeddingFunction()
+## How It Works
 
-DOCS = [
-    {
-        "collection": "legal_statutes",
-        "file": "nda-analyzer-docs/india_legal_statutes.txt",
-        "chunk_size": 600,
-        "overlap": 80,
-    },
-    {
-        "collection": "nda_templates",
-        "file": "nda-analyzer-docs/nda_clause_templates.txt",
-        "chunk_size": 500,
-        "overlap": 60,
-    },
-    {
-        "collection": "company_policies",
-        "file": "nda-analyzer-docs/company_hr_policy.txt",
-        "chunk_size": 400,
-        "overlap": 50,
-    },
-]
+### Upload flow
 
-def chunk_text(text, size, overlap):
-    words = text.split()
-    chunks, i = [], 0
-    while i < len(words):
-        chunk = " ".join(words[i:i+size])
-        chunks.append(chunk)
-        i += size - overlap
-    return chunks
+1. HR uploads a PDF or DOCX on the home page
+2. `POST /api/upload` extracts text and stores it in an in-memory map keyed by UUID
+3. Browser redirects to `/results/[id]`
 
-for doc in DOCS:
-    col = chroma_client.get_or_create_collection(
-        name=doc["collection"],
-        embedding_function=emb_fn,
-        metadata={"jurisdiction": "India"}
-    )
-    with open(doc["file"], "r") as f:
-        text = f.read()
-    chunks = chunk_text(text, doc["chunk_size"], doc["overlap"])
-    col.add(
-        documents=chunks,
-        ids=[f"{doc['collection']}_{i}" for i in range(len(chunks))],
-        metadatas=[{"source": doc["file"], "chunk_index": i} for i in range(len(chunks))]
-    )
-    print(f"Seeded {len(chunks)} chunks into '{doc['collection']}'")
+### Analysis pipeline (sequential, streamed via SSE)
 
-print("ChromaDB seeding complete.")
+The results page opens a Server-Sent Events connection to `GET /api/analyze/[id]`, which runs 4 agents in sequence and streams progress after each step:
+
+| Step | Agent | Input | Output |
+|---|---|---|---|
+| 1 | **Clause Extractor** | Raw NDA text | Labelled clauses JSON |
+| 2 | **Loophole Finder** | Clauses + RAG from `legal_statutes` & `nda_templates` | Issues JSON |
+| 3 | **Legal Comparator** | Clauses + Issues + RAG from `legal_statutes` | Compliance gaps JSON |
+| 4 | **Fix Suggester** | All prior outputs + RAG from `nda_templates` & `company_policies` | Fixes + risk score + executive summary |
+
+### RAG retrieval
+
+Each agent that uses RAG queries ChromaDB with a natural-language string. The `sentence-transformers/all-MiniLM-L6-v2` embedding model (384 dimensions) is used consistently for both seeding and querying. If ChromaDB is unreachable, the agents continue with empty context rather than failing.
+
+---
+
+## Project Structure
+
+```
+nda_analysis/
+├── app/
+│   ├── page.tsx                       # Upload page (drag-and-drop)
+│   ├── results/[id]/
+│   │   ├── page.tsx                   # Server component (unwraps params)
+│   │   └── ResultsClient.tsx          # Client component (SSE + full report UI)
+│   └── api/
+│       ├── upload/route.ts            # POST — parse file, store text, return UUID
+│       └── analyze/[id]/route.ts      # GET — run 4-agent pipeline, stream SSE
+├── lib/
+│   ├── agents/
+│   │   ├── clauseExtractor.ts         # Agent 1
+│   │   ├── loopholeFinder.ts          # Agent 2
+│   │   ├── legalComparator.ts         # Agent 3
+│   │   └── fixSuggester.ts            # Agent 4
+│   ├── rag/
+│   │   └── chromaRetriever.ts         # HuggingFace embeddings + ChromaDB queries
+│   ├── parsers/
+│   │   └── documentParser.ts          # PDF (pdf-parse) + DOCX (mammoth)
+│   ├── prompts/
+│   │   └── agentPrompts.ts            # All 4 prompt templates
+│   ├── gemini.ts                      # Shared Gemini API helper (JSON mode)
+│   ├── store.ts                       # In-memory job store (global Map)
+│   └── types.ts                       # TypeScript interfaces for all agent I/O
+├── scripts/
+│   └── seedChroma.ts                  # One-time ChromaDB seeding script
+├── nda-analyzer-docs/
+│   ├── india_legal_statutes.txt       → seeds legal_statutes collection
+│   ├── nda_clause_templates.txt       → seeds nda_templates collection
+│   ├── company_hr_policy.txt          → seeds company_policies collection
+│   └── sample_nda_with_loopholes.txt  → demo file to upload
+└── chroma_db/                         # ChromaDB persistent storage (auto-created)
 ```
 
 ---
 
-## Intentional Loopholes in sample_nda_with_loopholes.txt
+## Sample NDA — Known Loopholes
 
-This NDA was written with **9 deliberate loopholes** for demo purposes.
-The analyzer should catch all of them:
+`nda-analyzer-docs/sample_nda_with_loopholes.txt` contains **9 deliberate loopholes** for demo purposes. The analyzer should catch all of them:
 
 | Clause | Loophole | Legal basis | Severity |
 |---|---|---|---|
@@ -121,158 +168,11 @@ The analyzer should catch all of them:
 
 ---
 
-## Agent Prompt Templates (save in `lib/prompts/`)
+## Scripts
 
-### Agent 1 — Clause Extractor
-
-```
-You are a legal document analysis expert specializing in Indian employment law.
-
-Analyze the following NDA text and extract every distinct clause. For each clause:
-- Assign a clause type from this list: [CONFIDENTIALITY_DEFINITION, CONFIDENTIALITY_OBLIGATION, DURATION, NON_COMPETE, NON_SOLICITATION_EMPLOYEE, NON_SOLICITATION_CLIENT, IP_ASSIGNMENT, REMEDY, GOVERNING_LAW, AMENDMENT, CONSIDERATION, OTHER]
-- Extract the exact clause text
-- Note the clause number or heading if present
-
-NDA TEXT:
-{nda_text}
-
-Respond ONLY in valid JSON with this structure:
-{
-  "clauses": [
-    {
-      "id": "c1",
-      "type": "CLAUSE_TYPE",
-      "heading": "clause heading or null",
-      "text": "full clause text"
-    }
-  ]
-}
-```
-
-### Agent 2 — Loophole Finder
-
-```
-You are a legal expert specializing in Indian employment NDAs. Your job is to identify loopholes and weaknesses in NDA clauses that an employee could exploit.
-
-You have been provided with:
-1. The extracted NDA clauses (JSON)
-2. Relevant context from Indian legal statutes and standard NDA templates (from RAG retrieval)
-
-For each clause, identify any loopholes, weaknesses, or enforceability issues.
-
-CLAUSES:
-{clauses_json}
-
-RETRIEVED LEGAL CONTEXT:
-{rag_context}
-
-For each issue found, respond ONLY in valid JSON:
-{
-  "issues": [
-    {
-      "clause_id": "c1",
-      "issue_type": "VAGUE_DEFINITION | MISSING_CARVE_OUT | VOID_RESTRAINT | OVERBROAD_SCOPE | ILLEGAL_REMEDY | UNENFORCEABLE_DURATION | ONE_SIDED | NO_CONSIDERATION | OTHER",
-      "severity": "CRITICAL | HIGH | MEDIUM | LOW",
-      "description": "Plain English explanation of the loophole",
-      "employee_exploit": "How an employee could use this loophole",
-      "legal_basis": "Relevant Indian law section or case"
-    }
-  ]
-}
-```
-
-### Agent 3 — Legal Comparator
-
-```
-You are an Indian employment law expert. Compare the NDA clauses against Indian legal requirements and identify compliance gaps.
-
-Jurisdiction: India
-Applicable laws: Indian Contract Act 1872, IT Act 2000, POSH Act 2013, Industrial Disputes Act 1947, Payment of Gratuity Act 1972
-
-CLAUSES:
-{clauses_json}
-
-ISSUES FOUND:
-{issues_json}
-
-RETRIEVED STATUTE CONTEXT:
-{rag_context}
-
-For each non-compliant clause, respond ONLY in valid JSON:
-{
-  "compliance_gaps": [
-    {
-      "clause_id": "c1",
-      "law": "Name of Indian law",
-      "section": "Section number",
-      "gap_description": "What the clause violates or fails to include",
-      "risk_to_company": "Legal risk if this clause is challenged",
-      "is_void": true | false
-    }
-  ]
-}
-```
-
-### Agent 4 — Fix Suggester
-
-```
-You are a senior legal drafter specializing in Indian employment law. Your task is to suggest improved replacement text for each problematic NDA clause.
-
-ORIGINAL CLAUSES:
-{clauses_json}
-
-ISSUES IDENTIFIED:
-{issues_json}
-
-COMPLIANCE GAPS:
-{compliance_gaps_json}
-
-RETRIEVED BEST-PRACTICE TEMPLATES:
-{rag_context}
-
-For each problematic clause, provide a corrected version. Respond ONLY in valid JSON:
-{
-  "fixes": [
-    {
-      "clause_id": "c1",
-      "original_text": "...",
-      "fixed_text": "...",
-      "changes_summary": "Plain English summary of what was changed and why",
-      "risk_reduction": "HIGH | MEDIUM | LOW"
-    }
-  ],
-  "overall_risk_score": 0-100,
-  "overall_risk_label": "CRITICAL | HIGH | MEDIUM | LOW",
-  "executive_summary": "2-3 sentence summary for HR leadership"
-}
-```
-
----
-
-## Folder Structure for Next.js Project
-
-```
-nda-analyzer/
-├── app/
-│   ├── page.tsx                    # Upload UI
-│   ├── results/[id]/page.tsx       # Analysis results
-│   └── api/
-│       ├── analyze/route.ts        # Main pipeline endpoint
-│       └── upload/route.ts         # File upload handler
-├── lib/
-│   ├── agents/
-│   │   ├── clauseExtractor.ts
-│   │   ├── loopholeFinder.ts
-│   │   ├── legalComparator.ts
-│   │   └── fixSuggester.ts
-│   ├── rag/
-│   │   └── chromaRetriever.ts      # Query ChromaDB
-│   ├── parsers/
-│   │   └── documentParser.ts       # PDF + DOCX text extraction
-│   └── prompts/
-│       └── agentPrompts.ts
-├── scripts/
-│   └── seed_chromadb.py
-├── chroma_db/                      # ChromaDB persistent storage
-└── nda-analyzer-docs/              # Source documents (this folder)
-```
+| Command | Description |
+|---|---|
+| `npm run dev` | Start Next.js dev server on port 3000 |
+| `npm run build` | Production build |
+| `npm run seed` | Seed ChromaDB collections (requires ChromaDB running) |
+| `npm run lint` | Run ESLint |
